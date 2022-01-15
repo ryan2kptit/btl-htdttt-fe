@@ -21,25 +21,11 @@ function App() {
 
   async function handleSubmitButton(e) {
     e.preventDefault();
-    // if (inputValue.disease === "yes" && inputValue.parent === "")
-    //   alert("Chi tiết không được để trống. Mời bạn chọn lại!");
-
-    // if (inputValue.habit.length === 0)
-    //   alert("không được để trống. Mời bạn chọn lại!");
-
-    // if (inputValue.cause.length === 0)
-    //   alert("không được để trống. Mời bạn chọn lại!");
-
-    // if (inputValue.symptom.length === 0)
-    //   alert("không được để trống. Mời bạn chọn lại!");
-
-    // if (
-    //   inputValue.habit.length !== 0 &&
-    //   inputValue.cause.length !== 0 &&
-    //   inputValue.symptom.length !== 0
-    // ) {
       setModalShow(true);
-      const data = await postData(inputValue);
+      const result = await postData(inputValue);
+      if(result.data === 'binh thuong') alert('binh thuong')
+      else if(result.data === 'bi benh') alert('bi benh')
+      else alert("mac benh nghiem trong")
     //}
   }
 
